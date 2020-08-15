@@ -40,14 +40,14 @@
 }
 
 - (void)btn1Event {
-    [self kd_routerEventWithName:@"btn1" parameter:@{
+    [self kd_sendEventWithName:@"btn1" parameter:@{
         @"key1": @"value1",
         @"key2": @"value2"
     }];
 }
 
 - (void)btn2Event {
-    [self kd_routerEventWithName:@"btn2" parameter:@{
+    [self kd_sendEventWithName:@"btn2" parameter:@{
         @"key3": @"value1",
         @"key4": @"value2"
     }];

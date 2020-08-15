@@ -10,9 +10,17 @@
 
 @implementation UIResponder (KDRoute)
 
-- (void)kd_routerEventWithName:(NSString *)eventName
-                     parameter:(nullable NSDictionary *)parameter {
-    [[self nextResponder] kd_routerEventWithName:eventName parameter:parameter];
+- (void)kd_sendEventWithName:(NSString *)eventName
+                   parameter:(nullable NSDictionary *)parameter {
+    NSParameterAssert(eventName.length);
+    if ([self kd_receiveEventWithName:eventName parameter:parameter]) {
+        [[self nextResponder] kd_sendEventWithName:eventName parameter:parameter];
+    }
+}
+
+- (BOOL)kd_receiveEventWithName:(NSString *)eventName
+                      parameter:(nullable NSDictionary *)parameter {
+    return YES;
 }
 
 @end

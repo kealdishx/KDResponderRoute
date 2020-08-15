@@ -16,8 +16,9 @@
 
 @implementation ViewController
 
-- (void)kd_routerEventWithName:(NSString *)eventName parameter:(NSDictionary *)parameter {
+- (BOOL)kd_receiveEventWithName:(NSString *)eventName parameter:(NSDictionary *)parameter {
     NSLog(@"eventName: %@, parameter: %@", eventName, parameter);
+    return NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -12,8 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIResponder (KDRoute)
 
-- (void)kd_routerEventWithName:(NSString *)eventName
-                     parameter:(nullable NSDictionary *)parameter;
+- (void)kd_sendEventWithName:(NSString *)eventName
+                   parameter:(nullable NSDictionary *)parameter;
+
+- (BOOL)kd_receiveEventWithName:(NSString *)eventName
+                      parameter:(nullable NSDictionary *)parameter;
 
 @end
 
